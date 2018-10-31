@@ -3,7 +3,7 @@
 
     "name": "Klouder Number One!",
     "description": "Sets the number one ranked player on ScoreSaber to Klouder, because Klouder is best!",
-    "version": "1.3",
+    "version": "1.4",
 
     "icons": {
         "16": "images/Klouder16.png",
@@ -25,7 +25,15 @@
                 "https://scoresaber.com/global/1.php"
             ],
             "js": [
-                "contentScript.js"
+                "globalScores.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://scoresaber.com/u/76561198121090494"
+            ],
+            "js": [
+                "klouderScores.js"
             ]
         }
     ]

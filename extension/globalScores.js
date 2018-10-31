@@ -12,6 +12,7 @@ const cell1 = row.insertCell(0);
 const cell2 = row.insertCell(1);
 const cell3 = row.insertCell(2);
 const cell4 = row.insertCell(3);
+cell4.classList.add("pp");
 const cell5 = row.insertCell(4);
 
 // before I fill in your info, I want to grab the PP of the "top" player
@@ -42,14 +43,12 @@ cell3.innerHTML =
 // this last cell was a bit tricky. I'm taking the PP of the previous top player, that I grabbed earlier, and add .01 to it
 // I use the ${} inside of the string in order to allow me to do the addition without having to do it beforehand    
 cell4.innerHTML =
-    `<td class="pp">
-        <span class="scoreTop ppValue">${parseFloat (topPP.replace (/,/g,'')) + .01}</span><span class="scoreTop ppLabel">pp</span>
-    </td>`;
+    `<span class="scoreTop ppValue">${(parseFloat (topPP.replace (/,/g,'')) + .01).toFixed(2)}</span><span class="scoreTop ppLabel">pp</span>`;
+
+cell5.classList.add("diff");
 
 cell5.innerHTML =
-    `<td class="diff">
-        <span style="color:#363636;">0</span>
-    </td>`;
+    `<span>0</span>`;
 
 // finally, I loop through all the rows below your's and change their rank to be 1 more than it was
 // I start at 2 because row 0 is the header, and row 1 is you
