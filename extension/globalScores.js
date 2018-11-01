@@ -9,11 +9,16 @@ const row = table.insertRow(1);
 
 // create the 4 cells in the row I just created
 const cell1 = row.insertCell(0);
+
 const cell2 = row.insertCell(1);
+
 const cell3 = row.insertCell(2);
+
 const cell4 = row.insertCell(3);
 cell4.classList.add("pp");
+
 const cell5 = row.insertCell(4);
+cell5.classList.add("diff");
 
 // before I fill in your info, I want to grab the PP of the "top" player
 const topPP = document.getElementsByClassName("scoreTop")[0].innerText;
@@ -40,13 +45,15 @@ cell3.innerHTML =
     </a>
     </td>`;
 
-// this last cell was a bit tricky. I'm taking the PP of the previous top player, that I grabbed earlier, and add .01 to it
-// I use the ${} inside of the string in order to allow me to do the addition without having to do it beforehand    
+// here I calculate your pp and save it locally so I can use it on your profile page as well
+const klouderScore = (parseFloat (topPP.replace (/,/g,'')) + .01).toFixed(2);
+chrome.storage.local.set({ "klouderScore": klouderScore });
+
+// here I set your pp
 cell4.innerHTML =
-    `<span class="scoreTop ppValue">${(parseFloat (topPP.replace (/,/g,'')) + .01).toFixed(2)}</span><span class="scoreTop ppLabel">pp</span>`;
+    `<span class="scoreTop ppValue">${klouderScore}</span><span class="scoreTop ppLabel">pp</span>`;
 
-cell5.classList.add("diff");
-
+// here I set your change in rank, which is always 0
 cell5.innerHTML =
     `<span>0</span>`;
 
