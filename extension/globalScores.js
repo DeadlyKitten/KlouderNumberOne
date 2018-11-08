@@ -48,6 +48,7 @@ cell3.innerHTML =
 // here I calculate your pp and save it locally so I can use it on your profile page as well
 const klouderScore = Number ((parseFloat (topPP.replace (/,/g,'')) + .01)).toLocaleString('en', {minimumFractionDigits: 2});
 chrome.storage.local.set({ "klouderScore": klouderScore });
+console.log (klouderScore);
 
 // here I set your pp
 cell4.innerHTML =
