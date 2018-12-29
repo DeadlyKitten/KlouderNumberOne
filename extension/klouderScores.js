@@ -16,7 +16,9 @@ chrome.storage.local.get("klouderScore", function (result) {
     }
     else
     {
+        const realPP = lis[1].innerText.replace(/[^0-9, .]/g,'').toLocaleString('en', {minimumFractionDigits: 2});
+        console.log (realPP);
         lis[1].innerHTML =
-            `<strong>Performance Points:</strong> ${result.klouderScore}pp`;
+            `<strong>Performance Points:</strong> <span title="${realPP}pp">${result.klouderScore}pp</span>`;
     }
 });

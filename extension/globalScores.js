@@ -28,7 +28,7 @@ const topPP = document.getElementsByClassName("scoreTop")[0].innerText;
 cell1.innerHTML =
     `<td class="picture">
         <figure class="image is-24x24">
-            <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/8e/8e204b4c802dc9fe09cb409afd9e38a692e5af22.jpg" style="border-radius: 50%">
+            <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a5/a5c99f816f54b58166a2d546b98d0a26c8f62e36_full.jpg" style="border-radius: 50%">
         </figure>
     </td>`;
 
